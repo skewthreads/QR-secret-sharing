@@ -45,8 +45,10 @@ def main():
         elif answers['scale'] == 'Large':
             scale = 8
 
+    secret = raw_input('Enter your message: ')
+
     # Secret-share the message using Shamir's secret sharing scheme.
-    shares = PlaintextToHexSecretSharer.split_secret('correct horse battery staple', threshold, parties)
+    shares = PlaintextToHexSecretSharer.split_secret(secret, threshold, parties)
     print(shares)
     for share in shares: # Create png for each share
         img = pyqrcode.create(share)
@@ -57,8 +59,6 @@ def main():
         elif format == 'terminal':
             print(img.terminal())
 
-    # Recover
-    # print(PlaintextToHexSecretSharer.recover_secret(shares[0:threshold]))
 
 if __name__ == '__main__':
 	main()
