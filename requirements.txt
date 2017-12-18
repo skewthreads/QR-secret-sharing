@@ -1,4 +1,5 @@
-inquirer==2.2.0
+animation==0.0.4
 secretsharing==0.2.6
 PyQRCode==1.2.1
+inquirer==2.2.0
 pypng==0.0.18

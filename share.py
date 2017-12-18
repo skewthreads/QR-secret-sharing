@@ -2,6 +2,7 @@ from secretsharing import PlaintextToHexSecretSharer
 import pyqrcode
 import png
 import inquirer
+import animation
 
 def main():
     # Select number of shares
@@ -18,7 +19,22 @@ def main():
             parties = int(raw_input('Type a number greater than 1: '))
     else:
         parties = int(answer['parties'])
-    threshold = parties
+
+    # Select revealing threshold
+    if parties > 2:
+        min_threshold = 2
+        max_threshold = parties
+        thresholds = [x for x in range(min_threshold, max_threshold+1)]
+        questions = [
+            inquirer.List('threshold',
+                        message='How many shares should be enough for decryption? (Most secure: ' + str(max_threshold) + ')',
+                        choices=thresholds,
+                    ),
+        ]
+        answer = inquirer.prompt(questions)
+        threshold = int(answer['threshold'])
+    else:
+        threshold = parties
 
     # Select type of shares output
     questions = [
@@ -46,9 +62,11 @@ def main():
             scale = 8
 
     secret = raw_input('Enter your message: ')
-
+    wait = animation.Wait('spinner', 'Generating randomness.. It may take a while.. ')
+    wait.start()
     # Secret-share the message using Shamir's secret sharing scheme.
     shares = PlaintextToHexSecretSharer.split_secret(secret, threshold, parties)
+    wait.stop()
     print(shares)
     for share in shares: # Create png for each share
         img = pyqrcode.create(share)
