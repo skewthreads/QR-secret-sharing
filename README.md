@@ -27,8 +27,17 @@ Share 1           | Share 2           | Share 3
 
 
 ## Installation
-`pip install -r ./requirements.txt`
 
+```
+git clone https://github.com/skewthreads/QR-secret-sharing.git
+cd QR-secret-sharing
+pip install -r ./requirements.txt
+```
+
+## Suggested Usage
+Suggested usage is to create 3 or more shares of your message, print the corresponding QR codes and store them in separate physical locations. In case you need to recover your original message, scan the qr codes, and input the shares in the recovery script.
+
+You can specify the number of shares that will be sufficient to recover the original message. This threshold must obviously be greater than 2. The most secure practice is to set that threshold equal to the number of shares. If you set it to a number less than the number of shares, then you can recover your secret using less shares. For example, you can split your message into 4 shares and set your recovering threshold to 3, you can get the original message using any 3 of the 4 shares, in case that a share gets destroyed. But beware, an adversary can recover your secret using only 3 shares as well. Use this security/usability trade-off with caution.
 
 ## Credits
 - [inquirer](https://github.com/magmax/python-inquirer)
@@ -36,3 +45,11 @@ Share 1           | Share 2           | Share 3
 - [PyQRCode](https://github.com/mnooner256/pyqrcode)
 - [pypng](https://github.com/drj11/pypng)
 - [animation](https://github.com/bprinty/animation)
+
+## Caution
+**Always** check that you can recover your message before destroying the original.
+
+
+
+
+
