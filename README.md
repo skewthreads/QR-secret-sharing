@@ -52,7 +52,7 @@ You can specify the number of shares that will be sufficient to recover the orig
 ### ![alt text][skew-threads] An open-source project by Skew Threads
 
 
-[lock]: ./images/lock-sm.png
+[lock]: ./images/lock-small.png
 
 [flow]: ./images/QR-Secret-Sharing-flow.png
 
