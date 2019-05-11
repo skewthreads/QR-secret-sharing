@@ -1,8 +1,6 @@
-# QR Secret Sharing [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/skewthreads/QR-secret-sharing/blob/master/LICENSE)
+# ![alt text][lock] QR Secret Sharing [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/skewthreads/QR-secret-sharing/blob/master/LICENSE)
 
-<p align="center">
-  <img src="./images/logo.svg" height="30%" width="30%">
-</p>
+![alt text][flow]
 
 ## Description
 Create QR codes to secret share a message using [Shamir's secret sharing algorithm](https://dl.acm.org/citation.cfm?id=359176). Ideal for cryptocurrency wallet recovery keys, passwords, etc. Protect your message by sharing it to secrets. Print the created QR codes and store them separately somewhere safe.
@@ -51,5 +49,11 @@ You can specify the number of shares that will be sufficient to recover the orig
 
 
 
+### ![alt text][skew-threads] An open-source project by Skew Threads
 
 
+[lock]: ./images/lock-sm.png
+
+[flow]: ./images/QR-Secret-Sharing-flow.png
+
+[skew-threads]: ./images/skew-threads.png
