@@ -1,12 +1,10 @@
-from secretsharing import PlaintextToHexSecretSharer
-import pyqrcode
-import png
+from pyseltongue import PlaintextToHexSecretSharer
 import inquirer
 import animation
 
 def main():
     # Enter shares
-    shares = [raw_input('Enter your share: ')]
+    shares = [input('Enter your share: ')]
     while True:
         questions = [
             inquirer.List('share',
@@ -17,7 +15,7 @@ def main():
         answer = inquirer.prompt(questions)['share']
         if answer != 'OK':
             break
-        shares.append(raw_input('Enter your share: '))
+        shares.append(input('Enter your share: '))
 
     # Recover
     wait = animation.Wait('spinner', 'Generating randomness.. It may take a while.. ')
