@@ -1,6 +1,5 @@
-from secretsharing import PlaintextToHexSecretSharer
+from pyseltongue import PlaintextToHexSecretSharer
 import pyqrcode
-import png
 import inquirer
 import animation
 
@@ -14,9 +13,9 @@ def main():
     ]
     answer = inquirer.prompt(questions)
     if answer['parties'] == 'other':
-        parties = int(raw_input('Type a number: '))
+        parties = int(input('Type a number: '))
         while parties < 2:
-            parties = int(raw_input('Type a number greater than 1: '))
+            parties = int(input('Type a number greater than 1: '))
     else:
         parties = int(answer['parties'])
 
@@ -61,7 +60,7 @@ def main():
         elif answers['scale'] == 'Large':
             scale = 8
 
-    secret = raw_input('Enter your message: ')
+    secret = input('Enter your message: ')
     wait = animation.Wait('spinner', 'Generating randomness.. It may take a while.. ')
     wait.start()
     # Secret-share the message using Shamir's secret sharing scheme.
