@@ -10,7 +10,7 @@ Shares are not parts of the message. Each share does not reveal any information 
 ## Demonstration
 
 ### Sharing
-`python2 share.py`
+`python share.py`
 
 ![alt text](./images/share.png)
 
@@ -19,7 +19,7 @@ Share 1           | Share 2           | Share 3
 ![](./images/1.png) | ![](./images/2.png) | ![](./images/3.png)
 
 ### Recovering
-`python2 recover.py`
+`python recover.py`
 
 ![alt text](./images/recover.png)
 
